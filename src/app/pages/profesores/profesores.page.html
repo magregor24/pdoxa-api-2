@@ -1,0 +1,36 @@
+<ion-header no-border>
+  <ion-toolbar color='toolbar'>
+    <ion-buttons slot='start'>
+      <ion-back-button defaultHref='/principal'></ion-back-button>
+    </ion-buttons>
+    <ion-title>profesores</ion-title>
+  </ion-toolbar>
+
+  <ion-searchbar animated
+                 (ionChange)='buscar($event)'>
+  </ion-searchbar>
+
+</ion-header>
+
+<ion-content>
+
+    <ion-grid>
+        <ion-row>
+          <ion-col *ngFor="let p of profesores | filtro:textoBuscar: 'nombre','id' ">
+            <ion-item (click)='profe(p)' detail>
+                <ion-col size='2' class="id"> {{p.id}} </ion-col>
+                <ion-label> {{p.nombre}} </ion-label>
+                <ion-label> {{p.apellido}} </ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-infinite-scroll threshold='150px'
+                           (ionInfinite)='loadData($event)'>
+      <ion-infinite-scroll-content loadingSpinner='crescent'
+                      loadingText='Loading more data...'>
+      </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+
+</ion-content>

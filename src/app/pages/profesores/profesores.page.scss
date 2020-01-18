@@ -1,0 +1,23 @@
+ion-content{
+    --offset-top: 0px;
+    --offset-bottom: 0px;
+    --color: #FFF;
+}
+
+ion-item{
+    //--background: rgb(57, 129, 212);
+    margin: 3px;
+    color: black;
+    text-align: center;
+}
+
+.id{
+    background:#06B7EB;
+    color: white;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 2px;
+    //margin-left: -2px;
+    text-align: center;
+    line-height: 2em;
+}

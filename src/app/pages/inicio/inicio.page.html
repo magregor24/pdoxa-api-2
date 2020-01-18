@@ -1,0 +1,57 @@
+
+<div class="content">
+
+    <ion-img src='/assets/4.png'></ion-img>
+    <hr>
+    <hr>
+
+    <div class="container">
+      <h1>Welcome!</h1>
+        <p>Sign up to get an account</p>
+    </div>
+  
+      <form #formulario='ngForm'  (ngSubmit)='validarUsuarioss($event)'>
+        
+          <ion-list color='secondary'>
+
+            <ion-item>
+                <ion-icon slot="start" name="person"></ion-icon>
+                <ion-input placeholder="Display name"
+                        type='text'
+                        name='usuario'
+                        [(ngModel)]='usuario1'
+                        required>
+                </ion-input>              
+            </ion-item>
+      
+            <ion-item>
+                <ion-icon slot="start" name="lock"></ion-icon>
+                <ion-input placeholder="Password" 
+                            type='password'
+                            name='pass'
+                            [(ngModel)]='cedula1'
+                            required>
+                </ion-input>               
+            </ion-item>
+            
+          </ion-list>
+      
+          <ion-button expand='full' type='submit'
+                      [disabled]='formulario.invalid' #btn>
+                      Ingresar
+          </ion-button>
+        
+        
+        <div class="footer">
+          <p>Area de Ingenieria en Sistemas</p> 
+        </div>
+
+        
+</form>
+  
+  
+       
+  
+  
+</div>
+  

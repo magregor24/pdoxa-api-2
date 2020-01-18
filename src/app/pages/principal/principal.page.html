@@ -1,0 +1,61 @@
+<ion-header>  
+  <ion-toolbar color='toolbar'>
+    <ion-buttons slot='start'>
+      <ion-menu-button  menu='first'></ion-menu-button>
+    </ion-buttons>
+    <ion-title text-capitalize>principal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<ion-slides #sli (ionSlideDidChange)='cambio($event)' scrollbar='true' 
+            pager='true' class="slide-full">
+  
+  <ion-slide (click)='verHorario()'>
+    <ion-card mode='ios' class='carduno'>
+      <ion-img src='/assets/2.png' class="slide-image"></ion-img>
+      <ion-card-header>
+        <ion-card-title color='light'>Horario</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Presiona para ver tu horario</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-slide>
+
+  <ion-slide routerLink='/profesores'>
+      <ion-card mode='ios' class='carddos'>
+        <ion-img src='/assets/profesores.png' class="slide-image"></ion-img>
+        <ion-card-header>
+          <ion-card-title>Profesores</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>Esta opción te permitirá ver las secciones y materias que imparten tus colegas</p>
+        </ion-card-content>
+      </ion-card>
+  </ion-slide>
+
+  <ion-slide>
+      <ion-card mode='ios' class='cardtres'>
+        <ion-img src='/assets/descarga2.png' class="slide-image"></ion-img>
+        <ion-card-header>
+          <ion-card-title>Descarga</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>Descarga tu horario actual</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+
+</ion-slides>
+
+<ion-grid>
+  <ion-row >
+    <ion-col>Cantida Profesores</ion-col>
+    <ion-col>Cantida Secciones</ion-col>
+    <ion-col>Cantida Aulas</ion-col>
+  </ion-row>
+</ion-grid>
+
+</ion-content>

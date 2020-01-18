@@ -1,0 +1,84 @@
+<ion-header mode='ios'>
+    <ion-toolbar color='toolbar'>
+      <ion-buttons slot='start'>
+        <ion-back-button defaultHref='/principal'></ion-back-button>
+      </ion-buttons>
+      <ion-title>Horario Docentes</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+  
+<ion-card mode='ios'>
+  <form>
+    <ion-list>
+        <ion-list-header color='tol'>Buscar por periodo</ion-list-header>
+        <ion-item color='tol'>
+          <ion-label>Lapso Academico</ion-label>
+          <ion-select placeholder="Select One" (ionChange)='selection($event)'>
+            <ion-select-option *ngFor='let l of lapso | async' 
+                               [value]="l.lapsoAcademico" 
+                               > {{l.lapsoAcademico}} 
+            </ion-select-option>            
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </form>
+</ion-card>
+
+<ion-grid class="hora" *ngFor='let d of datos'>
+  
+  <ion-list *ngIf='d.mensaje'>
+    <ion-item color='warning'>
+      <ion-label>No hay resultados</ion-label>
+    </ion-item>
+  </ion-list>
+
+	<ion-row class="row hora1">
+		<p>MATERIA:  {{d.materia}}</p>
+	</ion-row>
+
+	<ion-row class="row alto">
+
+		<ion-col class="col-md-6 hora2">
+			<div class="border-abajo2"><p>DIA</p></div>
+			<div class="border-abajo2"><p>AULA</p></div>
+			<div><p>SECCION</p></div>
+		</ion-col>
+
+		<ion-col class="col-md-6 hora3">
+			<div class="border-abajo"><p>{{d.dia}}</p></div>
+			<div class="border-abajo"><p>{{d.nombreAula}}</p></div>
+			<div><p>{{d.seccion}}</p></div>
+		</ion-col>
+
+  </ion-row>
+  <ion-row>
+    <ion-col><p>Inico: {{d.inicio}} </p></ion-col>
+    <ion-col><p>Fin: {{d.fin}}</p></ion-col>
+  </ion-row>
+	
+</ion-grid>
+<!-- <ion-grid *ngFor='let d of datos'>
+    <ion-list *ngIf='d.mensaje'>
+        <ion-item color='warning'>
+          <ion-label>No hay resultados</ion-label>
+        </ion-item>
+      </ion-list>
+  <ion-row>
+    <ion-col class='col'><p style="text-align: center;">Dia {{d.dia}} </p></ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class='col'><p style="text-align: center;"> {{d.materia}} </p></ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="spa"><p>Seccion: {{d.seccion}}</p></ion-col>
+    <ion-col class="spa"><p>Aula: {{d.nombreAula}}</p></ion-col>
+  </ion-row>
+  <ion-row>
+      <ion-col class="span"><span>Inico: {{d.inicio}}</span></ion-col>
+      <ion-col class="span"><span>Fin: {{d.fin}}</span></ion-col>
+    </ion-row>
+</ion-grid> -->
+  
+</ion-content>

@@ -1,0 +1,58 @@
+<ion-content>
+
+  <ion-card>
+
+    <ion-row>
+        <ion-col size='12'><h6 text-center>{{nombre}} {{apellido}}</h6></ion-col> 
+    </ion-row>
+        
+    
+    <ion-col size='12'>
+      <p text-center *ngIf='telefono'>Telefono: {{telefono}}</p>
+      <p text-center *ngIf='telefono == null '>Telefono: XXXXXXXXXXX</p>
+      <p text-center *ngIf='email'>Email: {{email}}</p>
+      <p text-center *ngIf='email == null '>Email: xxxxxx@xxxxx.com </p>
+      
+    </ion-col> 
+   
+    <ion-button class="btn" (click)='salirSinArgumento()' expand='full'>
+        Salir
+     </ion-button>
+  </ion-card>
+
+  <ion-card color='warning' *ngIf='datos == 0'>
+      <ion-row class="row hora1">
+          <p>No se econtraron Resultados</p>
+      </ion-row>
+  </ion-card>
+
+  <ion-grid class="hora" *ngFor='let d of datos'>
+
+    <ion-row class="row hora1">
+      <p>MATERIA:  {{d.materia}}</p>
+    </ion-row>
+  
+    <ion-row class="row alto" style="background: white; border-bottom-left-radius: 40px;">
+  
+      <ion-col size='8' class="col-md-6 hora2">
+        <div class="border-abajo2"><p>DIA</p></div>
+        <div class="border-abajo2"><p>AULA</p></div>
+        <div><p>SECCION</p></div>
+      </ion-col>
+  
+      <ion-col size='4' class="col-md-6 hora3" style="color: black;">
+        <div class="border-abajo"><p>{{d.dia}}</p></div>
+        <div class="border-abajo"><p>{{d.nombreAula}}</p></div>
+        <div><p>{{d.seccion}}</p></div>
+      </ion-col>
+  
+    </ion-row>
+    <ion-row>
+      <ion-col><p>Inico: {{d.inicio}} </p></ion-col>
+      <ion-col><p>Fin: {{d.fin}}</p></ion-col>
+    </ion-row>
+    
+  </ion-grid>
+ 
+
+</ion-content>

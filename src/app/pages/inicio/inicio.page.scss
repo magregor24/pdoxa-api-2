@@ -1,0 +1,97 @@
+.content{
+    //background-image: url('/assets/LOGOUNERG.png');
+    width: 100%;
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+    position: relative;
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-image: linear-gradient(100deg,#114C5F, #2D0D3C);
+	
+
+}
+
+.container{
+	width: 100%;
+	margin-top:80px;
+}
+
+.container h1 {
+	color: #06bebd; 
+	font-family: Times-Roman; 
+	text-align: center;
+}
+.container p{
+	color:white;
+	text-align: center;
+}
+
+ion-img{
+	width: 100px;
+	position:absolute;
+	top:20px;
+	margin:auto;
+
+}
+
+form{
+	
+	width: 90%;
+	height:200vh;
+	margin: 0 auto;
+	display: block;
+	//position: relative;
+	margin-top: 50px;
+
+
+}
+
+
+ion-list{
+
+    --background: none;
+    background: none;
+    margin-bottom: 0!important;
+
+}
+
+ion-item{
+    --border-color: transparent!important;
+    --highlight-height: 0;
+    --background: none;
+   
+    border-radius: 4px;
+	margin-bottom: 10px;
+	background: rgb(65, 74, 90);
+}
+
+
+
+ion-icon {
+    color: #FAFAFA;
+}
+ion-input {
+	--color: #FFF;
+}
+
+
+.footer {
+
+	width: 100%;
+	margin-top: 80px;
+	display: flex;
+	text-align: center;
+	
+		
+}
+
+.footer p{
+	width: 100%;
+	text-align: center;
+	color:white;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+		
+}

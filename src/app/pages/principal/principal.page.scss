@@ -1,0 +1,65 @@
+ion-content{
+    --offset-top: 0px;
+    --offset-bottom: 0px;
+    //--background: #157591;
+    --color: #FFF;
+}
+.slide-full{
+    height: 80% !important;
+}
+ion-card{
+    overflow: unset !important;
+    background: rgb(56, 53, 236);
+    color: white;
+}
+ion-card{
+    height: 200px;
+    width: 300px;
+}
+ion-card-header{
+    position: relative;
+    top:-50px;
+}
+ion-card-content{
+    position: relative;
+    top:-50px;
+}
+
+.avatar{
+    width: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.slide-image{
+    width: 100px;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top:-50px;
+}
+
+ion-col{
+    background:#06AADA;
+    height: 80px;
+    color:white;
+    margin: 2px;
+    border-radius: 10px;
+    text-align: center;
+    
+}
+
+.carduno{
+    
+    background: rgb(243, 99, 106);
+}
+
+.carddos{
+    background: rgb(51, 196, 240);
+}
+
+.cardtres{
+    background: rgb(21, 233, 117);
+}

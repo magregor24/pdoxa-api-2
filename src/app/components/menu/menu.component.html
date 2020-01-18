@@ -1,0 +1,39 @@
+<ion-menu side="start" 
+            menuId="first"
+            contentId='principal'
+            #menu
+            >
+     
+      <ion-content>
+
+        <div class='img'>
+          
+        </div>
+        
+
+        <ion-list *ngIf='id === 0'>
+          <ion-menu-toggle>
+            <ion-item>Horario por dia</ion-item>
+            <ion-item detail (click)='modalPag($event)'>Lunes</ion-item>
+            <ion-item detail (click)='modalPag($event)'>Martes</ion-item>
+            <ion-item #mie detail (click)='modalPag($event)'>Miercoles</ion-item>
+            <ion-item detail (click)='modalPag($event)'>Jueves</ion-item>
+            <ion-item detail (click)='modalPag($event)'>Viernes</ion-item>
+            <ion-button (click)='click()' expand='full' color='secondary'>Logout</ion-button>
+         </ion-menu-toggle>  
+        </ion-list>
+
+        <ion-list *ngIf='id === 1'>
+          <ion-menu-toggle>
+            <ion-item ></ion-item>
+            <ion-item detail>Profesor + Seccion</ion-item>
+            <ion-item detail>Profesor + Materias</ion-item>
+            <ion-item detail>Profesor + Dias</ion-item>
+            <ion-item detail>Traer todo</ion-item>
+            <ion-button (click)='click()' expand='full' color='secondary'>Logout</ion-button>
+         </ion-menu-toggle>  
+        </ion-list>
+
+
+      </ion-content>
+</ion-menu>
