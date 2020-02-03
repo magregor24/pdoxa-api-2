@@ -26,7 +26,13 @@ export class ProfesoresPage implements OnInit {
 
   buscar(event){
     this.textoBuscar = event.detail.value; 
+    this.datos.getDocentes(this.a+=100)
+      .subscribe(docentes => {
+        this.profesores = docentes;
+      })
+      console.log(this.profesores.length);
   }
+
 
   loadData(event){
     

@@ -8,6 +8,11 @@ const routes: Routes = [
   { path: 'horarios', loadChildren: './pages/horarios/horarios.module#HorariosPageModule' },
   { path: 'profesores', loadChildren: './pages/profesores/profesores.module#ProfesoresPageModule' },
   { path: 'modal', loadChildren: './pages/modal/modal.module#ModalPageModule' },
+  {
+    path: 'pdf',
+    loadChildren: () => import('./pages/pdf/pdf.module').then( m => m.PdfPageModule)
+  },
+  
   
 ];
 

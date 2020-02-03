@@ -1,0 +1,63 @@
+<ion-header mode='ios'>
+  <ion-toolbar color='toolbar'>
+    <ion-buttons slot='start'>
+      <ion-back-button defaultHref='/principal'></ion-back-button>
+    </ion-buttons>
+    <ion-title>PDF</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<br>
+<ion-button (click)='crearPDF()' expand='full'>Crear PDF</ion-button>
+<br>
+<div id='cpdf' class='contenido'>
+
+  <div class="encabezado"> 
+    <div class="imagen"> <img src='/assets/ais.png'> </div>
+    <div class="parrafos">
+      <p class="centrar">REPÚBLICA BOLIVARIANA DE VENEZUELA</p>
+      <p class="centrar"> UNIVERSIDAD NACIONAL EXPERIMENTAL RÓMULO GALLEGOS</p>
+      <p class="centrar">DIRECCIÓN DE ADMISIÓN, CONTROL Y EVALUACIÓN</p>
+    </div>
+
+    <div class="imagen"></div>
+  </div>
+
+  <div class="titulo">
+    <h2>HORARIO DE CLASES</h2>
+  </div>
+
+  <div class="parrafos">
+    <p>C.I.: {{cedula}} - {{nombre}} {{apellido}} </p>
+    <p>CARRERA: (601) INGENIERIA EN INFORMATICA - INGENIERIA DE SISTEMAS (SAN JUAN DE LOS MORROS)</p>
+    <p>PERÍODO: {{periodo}} - Inscripcion</p>
+  </div>
+
+  <div class="tabla">
+    <table border="1">
+      <tr>
+        <th>COD. MATERIA</th>
+        <th>NOMBRE MATERIA</th>
+        <th>SECCIÓN</th>
+        <th>CLASE</th>
+        <th>AULA</th>
+      </tr>
+
+      <tr *ngFor='let d of datos'>
+        <td> {{d.codigoMateria}} </td>
+        <td>{{d.materia}}</td>
+        <td>{{d.seccion}}</td>
+        <td> {{d.dia}} {{d.inicio}} - {{d.fin}} </td>
+        <td> {{d.nombreAula}} </td>
+      </tr>
+    </table>
+  </div>
+
+
+</div>
+
+
+
+</ion-content>
+

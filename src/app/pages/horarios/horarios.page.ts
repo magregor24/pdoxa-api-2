@@ -24,7 +24,7 @@ constructor(private route:ActivatedRoute,
       this.id = p.id;
     });
 
-    this.servcio.getLapso().subscribe(p=>{
+    this.servcio.getLapso().subscribe( p =>{
       let ar = [];
       for(let i=0; i < p.length; i++){
         ar.push(p[i]);

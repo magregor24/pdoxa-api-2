@@ -11,6 +11,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { ComponentsModule } from './components/components.module';
 import { HttpClientModule } from '@angular/common/http';
 import { PipesModule } from './pipes/pipes.module';
+
+import { File } from '@ionic-native/file';
+import { FileOpener } from '@ionic-native/file-opener';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -26,6 +30,9 @@ import { PipesModule } from './pipes/pipes.module';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    
+    
+  
   ],
   bootstrap: [AppComponent]
 })
