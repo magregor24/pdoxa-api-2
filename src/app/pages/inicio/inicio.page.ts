@@ -13,6 +13,7 @@ export class InicioPage implements OnInit {
   cedula1;
   usuario1:string;
   doce:any;
+  admin;
  
 
   constructor(private dataService: DataService, 
@@ -25,10 +26,12 @@ export class InicioPage implements OnInit {
   validarUsuarioss(){
    
     this.doce = this.dataService.getValidarUsuario(this.usuario1,this.cedula1);
+    this.admin = this.dataService.getValidarUsuarioAdmin(this.usuario1,this.cedula1);
     
     this.doce.forEach(e => {
       
       if(e[0].valid == 'true'){
+
         this.dataService.idProfe.emit(e[0].id);
         let NavigationExtras:NavigationExtras = {
           queryParams:{
@@ -41,9 +44,26 @@ export class InicioPage implements OnInit {
         
         this.router.navigate(['/principal'],NavigationExtras);
       
-      }else{
+      }else if(this.admin){
+        
+        this.admin.forEach(ele =>{
+          
+          if(ele[0].role === 'admin'){
+            let administrador:NavigationExtras = {
+              queryParams:{
+                admin: ele[0].role,
+                active:true
+              }
   
-        this.presentToast('Datos Incorrectos');
+            }
+            this.router.navigate(['/principal'],administrador);
+
+          }else{
+
+            this.presentToast('Datos Incorrectos');
+          }
+        })
+        
       }
 
     })

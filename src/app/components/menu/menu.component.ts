@@ -1,7 +1,9 @@
-import { Component, OnInit, ViewChild, Input } from '@angular/core';
-import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
-import { IonMenu, ModalController } from '@ionic/angular';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
+import { ToastController } from '@ionic/angular';
 import { DataService } from 'src/app/services/data.service';
+import { AlertController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-menu',
@@ -10,17 +12,23 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class MenuComponent implements OnInit {
 
-  //@ViewChild('menu') menu:IonMenu;
-  id = 0;
   id2;
-  
-  constructor(public router:Router, private data:DataService) {}
+  item = 0;
+  us;
+ 
+  constructor(public router:Router, private data:DataService,
+    public alertController: AlertController,
+    public toastCrl:ToastController,private route:ActivatedRoute) {
+
+      this.route.queryParams.subscribe(params =>{
+       
+       this.us = params.usuario;
+      
+      })
+ 
+    }
 
   ngOnInit() {
-
-    this.data.id$.subscribe(p =>{
-      this.id = p;
-    })
 
     this.data.idProfe.subscribe(p =>{
       this.id2 = p;
@@ -29,11 +37,13 @@ export class MenuComponent implements OnInit {
   }
 
   click(){
-     this.id = 0;
     this.router.navigate(['/inicio']);
+    
   
   }
 
+   
+    
  modalPag(event){
  
  let Navi:NavigationExtras = {
@@ -46,7 +56,6 @@ export class MenuComponent implements OnInit {
 this.router.navigate(['/modal'],Navi);
 
 }
-
 
 
 }

@@ -30,7 +30,7 @@ export class ProfesoresPage implements OnInit {
       .subscribe(docentes => {
         this.profesores = docentes;
       })
-      console.log(this.profesores.length);
+      
   }
 
 

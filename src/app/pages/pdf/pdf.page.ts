@@ -47,8 +47,7 @@ export class PdfPage implements OnInit {
        return  p1['lapsoAcademico'] === this.lapso; 
 
       })
-      console.log('datos > ',this.datos);
-    
+      
     });
 
     
@@ -58,8 +57,11 @@ export class PdfPage implements OnInit {
     const options = {
         filename:'horario.pdf',
         image:{type:'pgn'},
-        html2canvas:{},
-        jsPDF:{ orientation: 'landscape'}
+        html2canvas:{al:'A4'},
+        jsPDF:{ orientation: 'p',
+                format:'A4',
+                margins: Array(55, 55, 55, 8),
+                encoding: 'UTF-8	'}
     };
 
     const content: Element = document.getElementById('cpdf');

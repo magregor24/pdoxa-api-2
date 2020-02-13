@@ -6,8 +6,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DataService {
 
-  id$= new EventEmitter<number>();
   idProfe = new EventEmitter<number>();
+  change = new EventEmitter<boolean>();
   constructor( private http:HttpClient) { }
 
 
@@ -30,5 +30,9 @@ export class DataService {
 
   getValidarUsuario(id1,id2){
     return this.http.get('http://localhost/APIPDOXA/validarUser/'+id1+"/"+id2);
+  }
+
+  getValidarUsuarioAdmin(id1,id2){
+    return this.http.get('http://localhost/APIPDOXA/ValidarUserAdmin/'+id1+"/"+id2);
   }
 }

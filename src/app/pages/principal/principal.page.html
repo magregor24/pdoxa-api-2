@@ -9,10 +9,9 @@
 
 <ion-content>
 
-<ion-slides #sli (ionSlideDidChange)='cambio($event)' scrollbar='true' 
-            pager='true' class="slide-full">
+<ion-slides #sli scrollbar='true' pager='true' class="slide-full">
   
-  <ion-slide (click)='verHorario()'>
+  <ion-slide (click)='verHorario()' *ngIf='ad === undefined '>
     <ion-card mode='ios' class='carduno'>
       <ion-img src='/assets/2.png' class="slide-image"></ion-img>
       <ion-card-header>
@@ -24,7 +23,7 @@
     </ion-card>
   </ion-slide>
 
-  <ion-slide routerLink='/profesores'>
+  <ion-slide #slide routerLink='/profesores' *ngIf='ad == "admin"'>
       <ion-card mode='ios' class='carddos'>
         <ion-img src='/assets/profesores.png' class="slide-image"></ion-img>
         <ion-card-header>
@@ -36,7 +35,7 @@
       </ion-card>
   </ion-slide>
 
-  <ion-slide (click)='verPDF()'>
+  <ion-slide (click)='verPDF()' *ngIf='ad === undefined'>
       <ion-card mode='ios' class='cardtres'>
         <ion-img src='/assets/descarga2.png' class="slide-image"></ion-img>
         <ion-card-header>
@@ -50,12 +49,10 @@
 
 </ion-slides>
 
-<ion-grid>
-  <ion-row >
-    <ion-col>Cantida Profesores</ion-col>
-    <ion-col>Cantida Secciones</ion-col>
-    <ion-col>Cantida Aulas</ion-col>
-  </ion-row>
-</ion-grid>
-
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar translucent='true' color='primary'>
+    <ion-title>AIS</ion-title>
+  </ion-toolbar>
+</ion-footer>

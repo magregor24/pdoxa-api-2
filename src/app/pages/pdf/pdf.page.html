@@ -13,6 +13,10 @@
 <br>
 <div id='cpdf' class='contenido'>
 
+  <div class="margen">
+
+  </div>
+
   <div class="encabezado"> 
     <div class="imagen"> <img src='/assets/ais.png'> </div>
     <div class="parrafos">
@@ -37,19 +41,19 @@
   <div class="tabla">
     <table border="1">
       <tr>
-        <th>COD. MATERIA</th>
-        <th>NOMBRE MATERIA</th>
-        <th>SECCIÓN</th>
-        <th>CLASE</th>
-        <th>AULA</th>
+        <th class="th">COD. MATERIA</th>
+        <th class="th">NOMBRE MATERIA</th>
+        <th class="th">SECCIÓN</th>
+        <th class="th">CLASE</th>
+        <th class="th">AULA</th>
       </tr>
 
       <tr *ngFor='let d of datos'>
-        <td> {{d.codigoMateria}} </td>
-        <td>{{d.materia}}</td>
-        <td>{{d.seccion}}</td>
-        <td> {{d.dia}} {{d.inicio}} - {{d.fin}} </td>
-        <td> {{d.nombreAula}} </td>
+        <td class="td ion-text-uppercase" > {{d.codigoMateria}} </td>
+        <td class="td ion-text-uppercase" >{{d.materia}}</td>
+        <td class="td ion-text-uppercase" >{{d.seccion}}</td>
+        <td class="td ion-text-uppercase" > {{d.dia}} {{d.inicio}} - {{d.fin}} </td>
+        <td class="td ion-text-uppercase" > {{d.nombreAula}} </td>
       </tr>
     </table>
   </div>
